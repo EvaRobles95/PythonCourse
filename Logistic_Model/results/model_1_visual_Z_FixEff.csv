@@ -1,0 +1,15 @@
+,coef,Estimate,Std. Error,z value,Pr(>|z|),sig,model
+0,(Intercept),0.049146,0.069394,0.708,0.47882,,model_1_visual_Z
+1,target_z,0.802804,0.015089,53.205,<2e-16,***,model_1_visual_Z
+2,coherence_z,-0.038409,0.013214,-2.907,0.00365,**,model_1_visual_Z
+3,cue_z,0.466225,0.014334,32.526,<2e-16,***,model_1_visual_Z
+4,PPS_z,0.007684,0.069981,0.110,0.91257,,model_1_visual_Z
+5,stim_1_z,-0.041985,0.015296,-2.745,0.00605,**,model_1_visual_Z
+6,resp_1_z,0.083734,0.015059,5.560,2.69e-08,***,model_1_visual_Z
+7,block_type_z,0.008493,0.019169,0.443,0.65771,,model_1_visual_Z
+8,cue_z:PPS_z,0.097239,0.013646,7.126,1.03e-12,***,model_1_visual_Z
+9,PPS_z:resp_1_z,-0.070372,0.013666,-5.150,2.61e-07,***,model_1_visual_Z
+10,resp_1_z:block_type_z,-0.036299,0.013468,-2.695,0.00703,**,model_1_visual_Z
+11,PPS_z:block_type_z,0.026224,0.019557,1.341,0.17995,,model_1_visual_Z
+12,PPS_z:resp_1_z:block_type_z,0.028897,0.013634,2.119,0.03405,*,model_1_visual_Z
+13,,,,,,,model_1_visual_Z

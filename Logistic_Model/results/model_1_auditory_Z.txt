@@ -1,0 +1,41 @@
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: response ~ (1 | sbj_id) + target_z + stimulus_z + (1 | block:sbj_id) +      cue_z * PPS_z + stim_1_z + resp_1_z * PPS_z * block_type_z
+   Data: data_aud
+Control: glmerControl(optimizer = "optimx", optCtrl = list(method = "nlminb"))
+
+     AIC      BIC   logLik deviance df.resid 
+ 41705.1  41835.0 -20837.5  41675.1    42586 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.6342 -0.5026 -0.2872  0.5049  3.5674 
+
+Random effects:
+ Groups       Name        Variance Std.Dev.
+ block:sbj_id (Intercept) 0.02256  0.1502  
+ sbj_id       (Intercept) 0.10023  0.3166  
+Number of obs: 42601, groups:  block:sbj_id, 904; sbj_id, 113
+
+Fixed effects:
+                              Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                 -0.0088435  0.0326134  -0.271 0.786267    
+target_z                     1.3466750  0.0143365  93.933  < 2e-16 ***
+stimulus_z                  -0.0757072  0.0123320  -6.139 8.30e-10 ***
+cue_z                        0.1915978  0.0135295  14.161  < 2e-16 ***
+PPS_z                        0.0059919  0.0176422   0.340 0.734131    
+stim_1_z                    -0.0537183  0.0157902  -3.402 0.000669 ***
+resp_1_z                     0.0952613  0.0157624   6.044 1.51e-09 ***
+block_type_z                -0.0001331  0.0131431  -0.010 0.991921    
+cue_z:PPS_z                 -0.0246528  0.0066693  -3.696 0.000219 ***
+PPS_z:resp_1_z              -0.0352712  0.0066650  -5.292 1.21e-07 ***
+resp_1_z:block_type_z       -0.0172845  0.0125065  -1.382 0.166960    
+PPS_z:block_type_z          -0.0009228  0.0070797  -0.130 0.896294    
+PPS_z:resp_1_z:block_type_z  0.0034961  0.0066548   0.525 0.599342    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+optimizer (optimx) convergence code: 0 (OK)
+Parameters or bounds appear to have different scalings.
+  This can cause poor performance in optimization. 
+  It is important for derivative free methods like BOBYQA, UOBYQA, NEWUOA.
+
