@@ -1,0 +1,48 @@
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: response ~ (1 | sbj_id) + target_z + stimulus_z + (1 | block:sbj_id) +  
+    cue_z * PPS_z + stim_1_z + resp_1_z * PPS_z + cue_z * resp_1_z *      PPS_z
+   Data: data_aud
+Control: glmerControl(optimizer = "optimx", optCtrl = list(method = "nlminb"))
+
+     AIC      BIC   logLik deviance df.resid 
+ 20524.8  20628.3 -10249.4  20498.8    21271 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.8002 -0.4853 -0.2717  0.4938  3.6914 
+
+Random effects:
+ Groups       Name        Variance Std.Dev.
+ block:sbj_id (Intercept) 0.03907  0.1977  
+ sbj_id       (Intercept) 0.11384  0.3374  
+Number of obs: 21284, groups:  block:sbj_id, 687; sbj_id, 113
+
+Fixed effects:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)          -0.009705   0.037414  -0.259 0.795334    
+target_z              1.387751   0.019835  69.966  < 2e-16 ***
+stimulus_z           -0.044076   0.017683  -2.493 0.012683 *  
+cue_z                 0.211087   0.019258  10.961  < 2e-16 ***
+PPS_z                 0.005251   0.020240   0.259 0.795290    
+stim_1_z             -0.017099   0.022732  -0.752 0.451944    
+resp_1_z              0.054464   0.023177   2.350 0.018776 *  
+cue_z:PPS_z          -0.019110   0.009570  -1.997 0.045842 *  
+PPS_z:resp_1_z       -0.032668   0.009607  -3.401 0.000672 ***
+cue_z:resp_1_z        0.004913   0.017745   0.277 0.781899    
+cue_z:PPS_z:resp_1_z -0.005676   0.009567  -0.593 0.553016    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) trgt_z stmls_ cue_z  PPS_z  stm_1_ rsp_1_ c_z:PPS_ PPS_:_ c_:_1_
+target_z    -0.012                                                                 
+stimulus_z   0.000 -0.021                                                          
+cue_z        0.008 -0.367 -0.003                                                   
+PPS_z       -0.002  0.004  0.000  0.001                                            
+stim_1_z    -0.002  0.016 -0.003  0.090  0.001                                     
+resp_1_z     0.005  0.005  0.015 -0.047 -0.004 -0.625                              
+cue_z:PPS_z  0.002 -0.021  0.000 -0.003 -0.002  0.000 -0.011                       
+PPS_z:rs_1_ -0.002 -0.035 -0.008  0.001  0.013  0.004 -0.014  0.034                
+c_z:rsp_1_z  0.022 -0.015  0.038  0.003 -0.008 -0.042  0.030 -0.003    0.004       
+c_:PPS_:_1_ -0.007 -0.011  0.001  0.001  0.019  0.005  0.001  0.022   -0.006 -0.010
