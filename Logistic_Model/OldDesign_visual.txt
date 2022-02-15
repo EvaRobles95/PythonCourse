@@ -1,0 +1,45 @@
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: response ~ (1 | sbj_id) + target_z + coherence_z + (1 | Block:sbj_id) +  
+    cue_z * PPS_z * block_type + stim_1_z * PPS_z + resp_1_z *      PPS_z * block_type_z + cue_z * resp_1_z * PPS_z + old_z
+   Data: data_vis
+Control: glmerControl(optimizer = "optimx", optCtrl = list(method = "nlminb"))
+
+     AIC      BIC   logLik deviance df.resid 
+ 34672.2  34847.5 -17315.1  34630.2    31139 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.1338 -0.6221  0.2833  0.6396  3.2543 
+
+Random effects:
+ Groups       Name        Variance Std.Dev.
+ Block:sbj_id (Intercept) 0.06461  0.2542  
+ sbj_id       (Intercept) 0.15560  0.3945  
+Number of obs: 31160, groups:  Block:sbj_id, 323; sbj_id, 41
+
+Fixed effects:
+                             Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                  0.041058   0.067429   0.609  0.54258    
+target_z                     0.802948   0.015098  53.182  < 2e-16 ***
+coherence_z                 -0.038398   0.013215  -2.906  0.00366 ** 
+cue_z                        0.473144   0.019650  24.079  < 2e-16 ***
+PPS_z                       -0.018532   0.068054  -0.272  0.78538    
+block_type                   0.015789   0.038364   0.412  0.68066    
+stim_1_z                    -0.041746   0.015427  -2.706  0.00681 ** 
+resp_1_z                     0.083007   0.015082   5.504 3.72e-08 ***
+old_z                        0.160227   0.064588   2.481  0.01311 *  
+cue_z:PPS_z                  0.092898   0.019451   4.776 1.79e-06 ***
+cue_z:block_type            -0.013996   0.026780  -0.523  0.60123    
+PPS_z:block_type             0.052833   0.039155   1.349  0.17723    
+PPS_z:stim_1_z               0.015338   0.015601   0.983  0.32554    
+PPS_z:resp_1_z              -0.077812   0.015583  -4.993 5.93e-07 ***
+resp_1_z:block_type_z       -0.036291   0.013476  -2.693  0.00708 ** 
+cue_z:resp_1_z              -0.017940   0.013286  -1.350  0.17692    
+cue_z:PPS_z:block_type       0.006714   0.027361   0.245  0.80615    
+PPS_z:resp_1_z:block_type_z  0.028509   0.013664   2.086  0.03694 *  
+cue_z:PPS_z:resp_1_z         0.002025   0.013616   0.149  0.88180    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+fit warnings:
+fixed-effect model matrix is rank deficient so dropping 2 columns / coefficients
