@@ -8,6 +8,8 @@ Anonymized, raw data can be found in the figshare repository: https://figshare.c
 
 
 Code and analyses: 
-	- pmf_repProb folders contain code to reproduce figures X and Y, psychometric function fit and repetition probability. 
+	- pmf_repProb folders contain code to reproduce figures 2 and 3, psychometric function fit and repetition probability. 
 	- pre-processing scripts can be found in pre-processing folder. 
 	- Logistic model code in R can be found in the Logistic_Model folder. 
+	- Result figure 1 can be obtained from running r_results.ipynb from in Logistic_model, however, some polishing touches were made using a graphical editor (inkscape).
+	- supplementary analysis S2 can be reproduced using the script "suppl_logistic_model_neutralOnly.R" in the Logistic_Model folder
