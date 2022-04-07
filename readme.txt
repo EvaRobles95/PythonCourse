@@ -1,23 +1,15 @@
-Note to self: maybe I have to change the datafile for the repprobs back. 
-If not, the values need to be corrected in the paper. 
-
 All code and data to reproduce analyses and figures of Choice History in Psychosis Proneness article. 
-
-Data
-Exp. 1	- contains all anonymised data for Experiment 1 (auditory task). 
-	-  _raw folders contain raw, unprocessed data. 
-	- exp1_clean_pmf contains data after exclusions for fitting psychometric functions. 
-	- exp1_model1_auditory contains pre-processed data for fitting logistic choice model.
-
-Exp. 2	- contains all anonymised data for Experiment 2 (visual task). 
-	- _raw folders contains unprocessed data
-	- separate datafiles for fitting pmf (exp2_clean_pmf.csv) and logistic model (exp2_model1_visual.csv). 
 
 Separate .csv files are necessary for fitting the logistic choice model and psychometric functions, 
 because psychometric functions require signed stimulus intensity which would falsify regression results. 
+All datafiles can be produced from the raw data using the respective pre-processing scripts. 
+
+Anonymized, raw data can be found in the figshare repository: https://figshare.com/account/home#/projects/131861
 
 
 Code and analyses: 
-	- pmf_repProb folders contain code to reproduce figures X and Y, psychometric function fit and repetition probability. 
+	- pmf_repProb folders contain code to reproduce figures 2 and 3, psychometric function fit and repetition probability. 
 	- pre-processing scripts can be found in pre-processing folder. 
 	- Logistic model code in R can be found in the Logistic_Model folder. 
+	- Result figure 1 can be obtained from running r_results.ipynb from in Logistic_model, however, some polishing touches were made using a graphical editor (inkscape).
+	- supplementary analysis S2 can be reproduced using the script "suppl_logistic_model_neutralOnly.R" in the Logistic_Model folder
