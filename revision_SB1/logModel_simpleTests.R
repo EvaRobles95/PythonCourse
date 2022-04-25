@@ -42,7 +42,7 @@ print(summary(block_aud))
 sink()
 
 # TESTS ON VISUAL DATA
-patsy_cue_vis <- 'response ~ (1|sbj_id) + (1|Block:sbj_id) + target_z  + cue_z'
+patsy_cue_vis <- 'response ~ (1|sbj_id) + target_z  + cue_z'
 
 
 cue_vis <- glmer(patsy_cue_vis, data=data_vis,
@@ -57,7 +57,7 @@ sink()
 
 # TEST block type on visual data
 
-patsy_block_vis <- 'response ~ (1|sbj_id) + (1|Block:sbj_id) + target_z  + block_type_z * resp_1_z'
+patsy_block_vis <- 'response ~ (1|sbj_id) + target_z  + block_type_z * resp_1_z'
 
 block_vis <- glmer(patsy_block_vis, data=data_vis, 
                    family=binomial('logit'), 
@@ -66,3 +66,29 @@ block_vis <- glmer(patsy_block_vis, data=data_vis,
 sink('block_vis.txt')
 print(summary(block_vis))
 sink()
+
+
+# TEST 3: Interaction between block type and stimulus history.
+# Experiment 1
+patsy_stim_aud <- 'response ~ (1|sbj_id) + target_z  + block_type_z * stim_1_z'
+
+stim_aud <- glmer(patsy_stim_aud, data=data_aud, 
+                  family=binomial('logit'), 
+                  control=glmerControl(optimizer='optimx', optCtrl=list(method='nlminb')))
+
+sink('stim_aud.txt')
+print(summary(stim_aud))
+sink()
+
+# Experiment 2
+patsy_stim_vis <- 'response ~ (1|sbj_id) + target_z  + block_type_z * stim_1_z'
+
+stim_vis <- glmer(patsy_stim_vis, data=data_vis, 
+                   family=binomial('logit'), 
+                   control=glmerControl(optimizer='optimx', optCtrl=list(method='nlminb')))
+
+sink('stim_vis.txt')
+print(summary(stim_vis))
+sink()
+
+
